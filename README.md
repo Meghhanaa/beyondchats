@@ -64,7 +64,7 @@ Create REST APIs to manage articles that will later be consumed by automation sc
 ## 🐳 How to Run Phase 1 (Docker)
 
 ### Step 1: Go to Phase 1 directory
-```bash
+
 cd phase1
 
 
@@ -111,77 +111,70 @@ docker exec -it phase1-app php artisan db:seed --class=ArticleSeeder
 curl http://localhost:8000/api/articles
 
 
-✅ Phase 1 runs on:
+### ✅ Phase 1 runs on:
 http://localhost:8000
 
-🤖 PHASE 2 – Node.js Automation Script
-🎯 Objective
+# 🤖 PHASE 2 – Node.js Automation Script
 
+## 🎯 Objective
 Automatically enhance articles by:
+1. Fetching the latest article from Laravel
+2. Searching Google for similar ranking articles
+3. Scraping reference content
+4. Using an LLM to rewrite the article
+5. Publishing the updated article back via APIs
 
-Fetching the latest article from Laravel
+---
 
-Searching Google for similar ranking articles
+## 🔄 Workflow
+1. Fetch latest article from Laravel API  
+2. Search article title on Google  
+3. Extract top 2 blog/article links  
+4. Scrape their main content  
+5. Rewrite original article using LLM  
+6. Append references  
+7. Publish updated article using Laravel API  
 
-Scraping reference content
+---
 
-Using an LLM to rewrite the article
+## 🐳 How to Run Phase 2
 
-Publishing the updated article back via APIs
-
-🔄 Workflow
-
-Fetch latest article from Laravel API
-
-Search article title on Google
-
-Extract top 2 blog/article links
-
-Scrape their main content
-
-Rewrite original article using LLM
-
-Append references
-
-Publish updated article using Laravel API
-
-🐳 How to Run Phase 2
-Step 1: Go to Phase 2 directory
+### Step 1: Go to Phase 2 directory
 cd phase2
-
-Step 2: Build Docker image
+### Step 2: Build Docker image
+bash
+Copy code
 docker build -t phase2-node .
-
-Step 3: Run script (API key via env variable)
+### Step 3: Run script (API key via environment variable)
+bash
+Copy code
 docker run -e OPENAI_API_KEY=your_api_key_here phase2-node
 
+### ⚠️ Note
+If OpenAI quota is exceeded, the script will fail gracefully.
 
-⚠️ Note:
+Billing is optional — Phase 2 logic works until API limits are reached.
 
-If OpenAI quota is exceeded, script will fail gracefully.
 
-Billing is optional — Phase 2 logic works until API limit.
 
-🎨 PHASE 3 – React Frontend
-🎯 Objective
+# 🎨 PHASE 3 – React Frontend
 
+## 🎯 Objective
 Create a responsive, professional UI that displays:
+1. Original articles
+2. Updated/generated articles
 
-Original articles
+---
 
-Updated/generated articles
+## 📦 Frontend Features
+1. Fetches data from Laravel APIs  
+2. Responsive article cards  
+3. Clean, minimal UI  
+4. Error handling for network issues  
 
-📦 Frontend Features
+---
 
-Fetches data from Laravel APIs
-
-Responsive article cards
-
-Clean, minimal UI
-
-Error handling for network issues
-
-📁 Phase 3 Structure
+## 📁 Phase 3 Structure
 src/
 ├── api/
 │   └── articlesApi.js
@@ -195,23 +188,37 @@ src/
 └── main.jsx
 
 ▶️ How to Run Phase 3
-Step 1: Go to Phase 3 directory
+### Step 1: Go to Phase 3 directory
+
+bash
+
+Copy code
+
 cd phase3
 
-Step 2: Install dependencies
+### Step 2: Install dependencies
+
+bash
+
+Copy code
+
 npm install
 
-Step 3: Start dev server
+### Step 3: Start development server
+
+bash
+
+Copy code
+
 npm run dev
 
-Step 4: Open browser
+### Step 4: Open in browser
+
 http://localhost:5173
-
-
-⚠️ Ensure Phase 1 backend is running before starting Phase 3.
+⚠️ Prerequisite
+Ensure Phase 1 backend is running before starting Phase 3.
 
 🔐 Environment & Security
-
 API keys are never hardcoded
 
 Secrets are passed via environment variables
@@ -221,27 +228,34 @@ Secrets are passed via environment variables
 GitHub Push Protection compliance ensured
 
 🧪 Common Issues & Fixes
+
 API not loading?
 
 ✔ Ensure Docker containers are running
-✔ Check docker ps
+
+✔ Check using docker ps
+
 ✔ Backend must be accessible on port 8000
 
-Network Error in React?
+Network error in React?
 
 ✔ Laravel backend must be running
-✔ CORS enabled in Laravel
+
+✔ CORS must be enabled in Laravel
 
 🏁 Final Status
 
 ✔ Phase 1 – Completed
+
 ✔ Phase 2 – Completed
+
 ✔ Phase 3 – Completed
+
 ✔ Dockerized
+
 ✔ Production-ready structure
 
-👩‍💻 Author
-
-Meghhanaa
-Full Stack Developer
-BeyondChats Assignment Submission
+## 👩‍💻 Author
+# Meghana Tamrakar
+## NIT BHOPAL
+## BeyondChats Assignment Submission
