@@ -1,0 +1,17 @@
+
+{
+  "name": "beyondchats-phase2",
+  "version": "1.0.0",
+  "description": "Node script to enhance articles using Google references and LLM",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "cheerio": "^1.0.0-rc.12",
+    "google-it": "^1.6.4",
+    "openai": "^4.38.0"
+  }
+}
