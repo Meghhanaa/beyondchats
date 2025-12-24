@@ -92,23 +92,22 @@ Create REST APIs to manage articles that will later be consumed by automation sc
 ## 🐳 How to Run Phase 1 (Docker)
 
 ### Step 1: Go to Phase 1 directory
-```bash
 cd phase1
 
 
-Step 2: Start containers
+### Step 2: Start containers
 docker compose up -d --build
 
-Step 3: Generate app key
+### Step 3: Generate app key
 docker exec -it phase1-app php artisan key:generate
 
-Step 4: Run migrations
+###  Step 4: Run migrations
 docker exec -it phase1-app php artisan migrate
 
-Step 5: (Optional) Seed sample article
+### Step 5: (Optional) Seed sample article
 docker exec -it phase1-app php artisan db:seed --class=ArticleSeeder
 
-Step 6: Verify API
+### Step 6: Verify API
 curl http://localhost:8000/api/articles
 
 
