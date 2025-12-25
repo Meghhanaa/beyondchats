@@ -12,7 +12,7 @@ Each phase is independent but connected through APIs.
 
 ---
 
-## 🧩 Tech Stack Used
+##  Tech Stack Used
 
 - **Backend (Phase 1)**: Laravel, PHP, MySQL, Docker
 - **Automation (Phase 2)**: Node.js, Axios, Cheerio, Google Search, OpenAI API
@@ -21,35 +21,48 @@ Each phase is independent but connected through APIs.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 beyondchats/
 │
+
 ├── phase1/ # Laravel Backend APIs
+
 │ ├── backend/
+
 │ ├── docker-compose.yml
+
 │
+
 ├── phase2/ # Node.js Automation Script
+
 │ ├── index.js
+
 │ ├── Dockerfile
+
 │
+
 ├── phase3/ # React Frontend
+
 │ ├── src/
+
 │ ├── vite.config.js
+
 │
+
 └── README.md
 
 
 ---
 
-# 🚀 PHASE 1 – Laravel Backend APIs
+#  PHASE 1 – Laravel Backend APIs
 
-## 🎯 Objective
+##  Objective
 Create REST APIs to manage articles that will later be consumed by automation scripts and frontend UI.
 
 ---
 
-## 📌 APIs Implemented
+##  APIs Implemented
 
 | Method | Endpoint | Description |
 |------|---------|-------------|
@@ -61,7 +74,7 @@ Create REST APIs to manage articles that will later be consumed by automation sc
 
 ---
 
-## 🐳 How to Run Phase 1 (Docker)
+##  How to Run Phase 1 (Docker)
 
 ### Step 1: Go to Phase 1 directory
 
@@ -70,14 +83,14 @@ cd phase1
 
 ---
 
-# 🚀 PHASE 1 – Laravel Backend APIs
+#  PHASE 1 – Laravel Backend APIs
 
-## 🎯 Objective
+##  Objective
 Create REST APIs to manage articles that will later be consumed by automation scripts and frontend UI.
 
 ---
 
-## 📌 APIs Implemented
+##  APIs Implemented
 
 | Method | Endpoint | Description |
 |------|---------|-------------|
@@ -89,7 +102,7 @@ Create REST APIs to manage articles that will later be consumed by automation sc
 
 ---
 
-## 🐳 How to Run Phase 1 (Docker)
+##  How to Run Phase 1 (Docker)
 
 ### Step 1: Go to Phase 1 directory
 cd phase1
@@ -111,12 +124,12 @@ docker exec -it phase1-app php artisan db:seed --class=ArticleSeeder
 curl http://localhost:8000/api/articles
 
 
-### ✅ Phase 1 runs on:
+###  Phase 1 runs on:
 http://localhost:8000
 
-# 🤖 PHASE 2 – Node.js Automation Script
+#  PHASE 2 – Node.js Automation Script
 
-## 🎯 Objective
+##  Objective
 Automatically enhance articles by:
 1. Fetching the latest article from Laravel
 2. Searching Google for similar ranking articles
@@ -126,7 +139,7 @@ Automatically enhance articles by:
 
 ---
 
-## 🔄 Workflow
+##  Workflow
 1. Fetch latest article from Laravel API  
 2. Search article title on Google  
 3. Extract top 2 blog/article links  
@@ -137,36 +150,33 @@ Automatically enhance articles by:
 
 ---
 
-## 🐳 How to Run Phase 2
+##  How to Run Phase 2
 
 ### Step 1: Go to Phase 2 directory
 cd phase2
 ### Step 2: Build Docker image
-bash
-Copy code
 docker build -t phase2-node .
 ### Step 3: Run script (API key via environment variable)
-bash
-Copy code
+
 docker run -e OPENAI_API_KEY=your_api_key_here phase2-node
 
-### ⚠️ Note
+### Note
 If OpenAI quota is exceeded, the script will fail gracefully.
 
 Billing is optional — Phase 2 logic works until API limits are reached.
 
 
 
-# 🎨 PHASE 3 – React Frontend
+#  PHASE 3 – React Frontend
 
-## 🎯 Objective
+##  Objective
 Create a responsive, professional UI that displays:
 1. Original articles
 2. Updated/generated articles
 
 ---
 
-## 📦 Frontend Features
+##  Frontend Features
 1. Fetches data from Laravel APIs  
 2. Responsive article cards  
 3. Clean, minimal UI  
@@ -174,51 +184,48 @@ Create a responsive, professional UI that displays:
 
 ---
 
-## 📁 Phase 3 Structure
+##  Phase 3 Structure
 src/
+
 ├── api/
+
 │   └── articlesApi.js
+
 ├── components/
+
 │   ├── ArticleCard.jsx
+
 │   ├── ArticleList.jsx
+
 │   └── Navbar.jsx
+
 ├── styles/
+
 │   └── styles.css
+
 ├── App.jsx
+
 └── main.jsx
 
-▶️ How to Run Phase 3
+ How to Run Phase 3
 ### Step 1: Go to Phase 3 directory
-
-bash
-
-Copy code
-
 cd phase3
 
 ### Step 2: Install dependencies
-
-bash
-
-Copy code
-
 npm install
 
 ### Step 3: Start development server
-
-bash
-
-Copy code
 
 npm run dev
 
 ### Step 4: Open in browser
 
 http://localhost:5173
-⚠️ Prerequisite
+
+prerequisite
 Ensure Phase 1 backend is running before starting Phase 3.
 
-🔐 Environment & Security
+ Environment & Security
 API keys are never hardcoded
 
 Secrets are passed via environment variables
@@ -227,7 +234,7 @@ Secrets are passed via environment variables
 
 GitHub Push Protection compliance ensured
 
-🧪 Common Issues & Fixes
+ Common Issues & Fixes
 
 API not loading?
 
@@ -255,7 +262,7 @@ Network error in React?
 
 ✔ Production-ready structure
 
-## 👩‍💻 Author
+##  Author
 # Meghana Tamrakar
 ## NIT BHOPAL
 ## BeyondChats Assignment Submission
